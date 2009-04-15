@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/267/trunk/ROOT/javascript/plugins/xrejson/tests/data
+END
+claypool.application.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/267/trunk/ROOT/javascript/plugins/xrejson/tests/data/claypool.application.js
+END
+claypool.mvc.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/267/trunk/ROOT/javascript/plugins/xrejson/tests/data/claypool.mvc.js
+END
+claypool.logging.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/267/trunk/ROOT/javascript/plugins/xrejson/tests/data/claypool.logging.js
+END
+claypool.core.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/267/trunk/ROOT/javascript/plugins/xrejson/tests/data/claypool.core.js
+END
+claypool.ioc.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/267/trunk/ROOT/javascript/plugins/xrejson/tests/data/claypool.ioc.js
+END
+claypool.aop.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/267/trunk/ROOT/javascript/plugins/xrejson/tests/data/claypool.aop.js
+END

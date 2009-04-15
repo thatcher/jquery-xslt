@@ -1,0 +1,88 @@
+9
+
+dir
+267
+http://claypooljs.com/svn/trunk/ROOT/javascript/plugins/xrejson/tests/data
+http://claypooljs.com/svn
+
+
+
+2008-08-12T03:53:39.616109Z
+267
+claypooljssvn
+
+
+svn:special svn:externals svn:needs-lock
+
+claypool.application.js
+file
+
+
+
+delete
+2008-08-06T20:21:41.690354Z
+afc75501f91cd29a0b40c0335e75955e
+2008-08-12T03:53:39.616109Z
+267
+claypooljssvn
+
+claypool.mvc.js
+file
+
+
+
+delete
+2008-08-06T20:23:27.075354Z
+f88e0c9d3c8ec267e145f7c69f271b3d
+2008-08-12T03:53:39.616109Z
+267
+claypooljssvn
+
+claypool.logging.js
+file
+
+
+
+delete
+2008-08-06T20:23:20.160354Z
+c8d20a7418c19accf0b11bafc7aa6625
+2008-08-12T03:53:39.616109Z
+267
+claypooljssvn
+
+claypool.core.js
+file
+
+
+
+delete
+2008-08-06T20:22:36.233354Z
+1a4ac844579a584421938cc2cc72cc4a
+2008-08-12T03:53:39.616109Z
+267
+claypooljssvn
+
+claypool.ioc.js
+file
+
+
+
+delete
+2008-08-06T20:23:14.256354Z
+606a9a109e41c3fda9ef309a6be9d807
+2008-08-12T03:53:39.616109Z
+267
+claypooljssvn
+
+claypool.aop.js
+file
+
+
+
+delete
+2008-08-06T20:22:39.600354Z
+b812e4a0aafe335ff2b1c522e1a2bbba
+2008-08-12T03:53:39.616109Z
+267
+claypooljssvn
+
