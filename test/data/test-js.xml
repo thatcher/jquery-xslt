@@ -1,19 +1,18 @@
-<?xml-stylesheet type="text/xsl" href="../../app/models/xml2js.xslt"?>
+<?xml-stylesheet type="text/xsl" href="../../eval.xsl"?>
 <!-- 
 Test XML markup for converting xml to JS using XSLT.
 By Doeke Zanstra, 2006 
 -->
 <root version="1.0" xmlns:xlink="http://xlink" xmlns:ding="http://zanstra.com/ding" xmlns="http://example.com/test">
-  this text should be ignored
   <birthdate>2006-11-14</birthdate>
   <appointment>2006-11-14T12:30</appointment>
-  <appointment>2006-11-14T12:30:00</appointment>
+  <appointment>2006-11-14T12:20:00</appointment>
   <script><![CDATA[<script>alert("YES")</script>]]></script>
   <positive>123</positive>
   <negative>-12</negative>
   <zero>0</zero>
   <fixed>10.25</fixed>
-  <fixed-neg>-10.25</fixed-neg>
+  <fixed_neg>-10.25</fixed_neg>
   <padded_zero>01</padded_zero>
   <ding:ding>Namespaced element</ding:ding>
   <ding:dong>Namespaced element</ding:dong>
@@ -43,7 +42,16 @@ More unicode&#8224;</escape>
     <dong:zooi>jaja</dong:zooi>
     <zut>frot</zut>
   </nsobject>
-  <mixed at="I have an attribute">This will be ignored</mixed>
+  <mixed at="I have an attribute">This will not be ignored</mixed>
+  <mixed_object at="I have an attribute">
+      This will not be ignored either
+      <abc>123</abc>
+      this is a pig
+      <def foo='blah'/>
+      <ghi foo='blah'>goop</ghi>
+      <jkl>a</jkl>
+      <jkl>b</jkl>
+  </mixed_object>
   <array>
     <item/>
     <item>true</item>
@@ -57,4 +65,6 @@ More unicode&#8224;</escape>
       <value>7</value>
     </item>
   </array>
+  <forced_array>abc</forced_array>
+  <forced_text>abc</forced_text>
 </root>

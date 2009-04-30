@@ -32,17 +32,17 @@
  * @author <a href="mailto:jb@eaio.com">Johann Burkard</a>
  * @version $Id: jquery.xslt.js,v 1.10 2008/08/29 21:34:24 Johann Exp $
  */
-(function($) {
+(function($, _) {
 	var _xslt = null,
 		template = null,
 		processor = null;
 	
-    $.xslt = function() {
+    _.xslt = function() {
         return this;
     }
     var str = /^\s*</;
     if (document.recalc) { // IE 5+
-        $.xslt = function(name, xslt_url, parameters, filter) {
+        _.xslt = function(name, xslt_url, parameters, filter) {
 			// Load your XSL
 			//alert("Loading "+xslt_url);
 			_xslt = new ActiveXObject("MSXML2.FreeThreadedDomDocument");
@@ -64,7 +64,7 @@
 				}
 			}
 			//add function to jquery namespace
-			$[name] = function(xml){
+			_[name] = function(xml){
 				processor.input = xml;
 				processor.transform();
 				if(filter && $.isFunction(filter)){
@@ -87,7 +87,7 @@
            support = true;
        }
        if (support) {
-            $.xslt = function(name, xslt_url, parameters, filter) {
+            _.xslt = function(name, xslt_url, parameters, filter) {
 				//compile an xslt and add it to the jQuery static namespace
 				$.ajax({
 					url:xslt_url,
@@ -107,7 +107,7 @@
 				//add the function to jquery namespace
                 if ($.isFunction(processor.transformToFragment)) {
 					
-					$[name] = function(xml){
+					_[name] = function(xml){
 						var result;
 						if(filter && $.isFunction(filter)){
 							result = processor.transformToFragment(xml, document);
@@ -119,7 +119,7 @@
 					
                 } else if($.isFunction(processor.transformDocument)) {
 
-					$[name] = function(xml){
+					_[name] = function(xml){
 	                    // obsolete Mozilla interface
 	                    var resultDoc = document.implementation.createDocument("", "", null);
 	                    processor.transformDocument(xml, _xslt, resultDoc, null);
@@ -135,4 +135,4 @@
             };
        }
     }
-})(jQuery);
+})(jQuery, jsPath);

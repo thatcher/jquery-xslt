@@ -1,0 +1,55 @@
+h1. jquery-xslt;
+
+jquery-xslt is a jquery-jspath plugin that provides cross browser xslt implementation 
+(based on based on jquery.xslt.js by johann burkard).  it is designed to provide 
+a super fast way of transforming xml to js on the client, though it could be used 
+for many additional purposes.
+
+h3. how about a useful example before i loose interest
+
+ok how about this one
+
+<pre><code>
+//This is our example plugin that will be created.
+_.xslt('evalx', 'xml2js.xsl', {
+	force_array : "|hit|location|list|term|target|"
+}, function(result){
+	var doc,
+		json = (typeof(result)=='string')?result:$(result).text();
+		doc = eval( "(" + json + ")" );
+	return doc;
+});
+
+var js;
+$.ajax({
+	type:'GET',
+	url:'test/data/test-js.xml',
+	dataType:'xml',
+	success:function(xml){
+	    js = _.evalx(xml);
+	}
+});
+
+//This is a super-fast way to convert xml to javascript! in any browser!
+</code></pre>
+
+nice!  
+
+h2. ready for more?
+checkout the example.html!
+
+also check out these 
+jquery-jspath plugins:
+
+* http://github.com/thatcher/jquery-jspath
+* http://github.com/thatcher/jquery-json
+* http://github.com/thatcher/jquery-loremipsum
+* http://github.com/thatcher/jquery-objtree
+* http://github.com/thatcher/jquery-xslt
+
+qlso please check out the spec for each plugin (test/test.html).  special thanks to aaron quint for the 
+jqunit-spec plugin that all of these plugins use!
+
+
+
+
