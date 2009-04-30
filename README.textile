@@ -10,8 +10,12 @@ h3. how about a useful example before i loose interest
 ok how about this one
 
 <pre><code>
-//This is our example plugin that will be created.
-_.xslt('evalx', 'xml2js.xsl', {
+// This is our example plugin that will be created.
+// it will be called _.evalx because of the first
+// param, will use eval.xsl, and then pass the result 
+// to the optional callback provided as the third param
+
+_.xslt('evalx', 'eval.xsl', {
 	force_array : "|hit|location|list|term|target|"
 }, function(result){
 	var doc,
@@ -26,11 +30,14 @@ $.ajax({
 	url:'test/data/test-js.xml',
 	dataType:'xml',
 	success:function(xml){
+		
+		// This is a super-fast way to convert 
+		// xml to javascript! in any browser!	
 	    js = _.evalx(xml);
+	    
 	}
 });
 
-//This is a super-fast way to convert xml to javascript! in any browser!
 </code></pre>
 
 nice!  
