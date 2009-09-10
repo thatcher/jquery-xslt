@@ -15,7 +15,7 @@ ok how about this one
 // param, will use eval.xsl, and then pass the result 
 // to the optional callback provided as the third param
 
-_.xslt('evalx', 'eval.xsl', {
+$.xslt('evalx', 'eval.xsl', {
 	force_array : "|hit|location|list|term|target|"
 }, function(result){
 	var doc,
@@ -33,7 +33,7 @@ $.ajax({
 		
 		// This is a super-fast way to convert 
 		// xml to javascript! in any browser!	
-	    js = _.evalx(xml);
+	    js = $.evalx(xml);
 	    
 	}
 });

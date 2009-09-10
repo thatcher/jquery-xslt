@@ -18,17 +18,17 @@
  *  ( http://github.com/thatcher/jquery-jspath )
  */
 
-(function($, _) {
+(function($) {
 	var _xslt = null,
 		template = null,
 		processor = null;
 	
-    _.xslt = function() {
+    $.xslt = function() {
         return this;
     }
     var str = /^\s*</;
     if (document.recalc) { // IE 5+
-        _.xslt = function(name, xslt_url, parameters, filter) {
+        $.xslt = function(name, xslt_url, parameters, filter) {
 			// Load your XSL
 			//alert("Loading "+xslt_url);
 			_xslt = new ActiveXObject("MSXML2.FreeThreadedDomDocument");
@@ -50,7 +50,7 @@
 				}
 			}
 			//add function to jquery namespace
-			_[name] = function(xml){
+			$[name] = function(xml){
 				processor.input = xml;
 				processor.transform();
 				if(filter && $.isFunction(filter)){
@@ -73,7 +73,7 @@
            support = true;
        }
        if (support) {
-            _.xslt = function(name, xslt_url, parameters, filter) {
+            $.xslt = function(name, xslt_url, parameters, filter) {
 				//compile an xslt and add it to the jQuery static namespace
 				$.ajax({
 					url:xslt_url,
@@ -93,7 +93,7 @@
 				//add the function to jquery namespace
                 if ($.isFunction(processor.transformToFragment)) {
 					
-					_[name] = function(xml){
+					$[name] = function(xml){
 						var result;
 						if(filter && $.isFunction(filter)){
 							result = processor.transformToFragment(xml, document);
@@ -105,7 +105,7 @@
 					
                 } else if($.isFunction(processor.transformDocument)) {
 
-					_[name] = function(xml){
+					$[name] = function(xml){
 	                    // obsolete Mozilla interface
 	                    var resultDoc = document.implementation.createDocument("", "", null);
 	                    processor.transformDocument(xml, _xslt, resultDoc, null);
@@ -121,4 +121,4 @@
             };
        }
     }
-})(jQuery, jsPath);
+})(jQuery);
