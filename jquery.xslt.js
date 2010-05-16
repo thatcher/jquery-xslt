@@ -14,8 +14,6 @@
  *    it has many other possible uses.  it is very fast as very 
  *    efficient, and works in all modern browsers
  * 
- *          depends_on jquery-jspath 
- *  ( http://github.com/thatcher/jquery-jspath )
  */
 
 (function($) {
